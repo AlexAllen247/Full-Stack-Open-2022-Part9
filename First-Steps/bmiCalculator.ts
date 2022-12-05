@@ -53,9 +53,10 @@ try {
   }
   console.log(errorMessage);
 }
-
+/*
 console.log(calculateBmi(180, 74));
 console.log(calculateBmi(178, 98));
 console.log(calculateBmi(165, 65));
 console.log(calculateBmi(185, 72));
 console.log(calculateBmi(155, 82));
+*/

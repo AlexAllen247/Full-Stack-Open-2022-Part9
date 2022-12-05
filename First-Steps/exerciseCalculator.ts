@@ -100,15 +100,15 @@ const calculateExercises = (
 };
 
 try {
-    const { rawTarget, rawDailyHours } = getInput();
-    const { parsedTarget, parsedDailyHours } = parseInput(
-      rawTarget,
-      rawDailyHours
-    );
-    console.log(calculateExercises(parsedTarget, parsedDailyHours));
-  } catch (error) {
-    if (error instanceof Error)
-      console.log("Error, something bad happened, message: ", error.message);
-  }
+  const { rawTarget, rawDailyHours } = getInput();
+  const { parsedTarget, parsedDailyHours } = parseInput(
+    rawTarget,
+    rawDailyHours
+  );
+  console.log(calculateExercises(parsedDailyHours, parsedTarget));
+} catch (error) {
+  if (error instanceof Error)
+    console.log("Error, something bad happened, message: ", error.message);
+}
 
-console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
+//console.log(calculateExercises([3, 0, 2, 4.5, 0, 3, 1], 2));
