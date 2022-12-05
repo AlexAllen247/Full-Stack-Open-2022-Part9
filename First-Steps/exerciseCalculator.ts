@@ -32,7 +32,7 @@ const getInput = (): rawValues => {
   return { rawTarget, rawDailyHours };
 };
 
-const parseInput = (
+export const parseInput = (
   rawTarget: string,
   rawDailyHours: string[]
 ): parsedValues => {
@@ -65,7 +65,7 @@ interface Result {
   average: number;
 }
 
-const calculateExercises = (
+export const calculateExercises = (
   dailyExerciseHours: number[],
   target: number
 ): Result => {
