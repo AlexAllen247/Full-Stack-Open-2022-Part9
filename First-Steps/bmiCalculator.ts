@@ -31,7 +31,7 @@ const parseInput = (rawHeight: string, rawWeight: string): parsedValues => {
   }
 };
 
-const calculateBmi = (height: number, weight: number): string => {
+export const calculateBmi = (height: number, weight: number): string => {
   const bmi = weight / (height / 100) ** 2;
   if (bmi < 18.5) {
     return "Underweight";
@@ -60,3 +60,4 @@ console.log(calculateBmi(165, 65));
 console.log(calculateBmi(185, 72));
 console.log(calculateBmi(155, 82));
 */
+
