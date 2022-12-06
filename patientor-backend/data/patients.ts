@@ -1,6 +1,7 @@
 import { PatientSensitive } from "../src/types";
+import toNewPatient from "../src/utils";
 
-const patientEntries: Array<PatientSensitive> = [
+const data = [
   {
     id: "d2773336-f723-11e9-8f0b-362b9e155667",
     name: "John McClane",
@@ -42,5 +43,11 @@ const patientEntries: Array<PatientSensitive> = [
     occupation: "Digital evangelist",
   },
 ];
+
+const patientEntries: PatientSensitive[] = data.map(obj => {
+  const object = toNewPatient(obj) as PatientSensitive;
+  object.id = obj.id;
+  return object;
+});
 
 export default patientEntries;
