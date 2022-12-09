@@ -2,6 +2,7 @@
   "eslint.workingDirectories": [
     "./First-Steps",
     "./patientor",
-    "./patientor-backend"
+    "./patientor-backend",
+    "./courses"
   ]
 }
