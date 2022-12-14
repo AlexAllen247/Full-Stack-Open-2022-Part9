@@ -4,6 +4,16 @@ export interface Diagnosis {
   latin?: string;
 }
 
+export interface Discharge {
+  date: string;
+  criteria: string;
+}
+
+export interface SickLeave {
+  startDate: string;
+  endDate: string;
+}
+
 export interface Patient {
   id: string;
   name: string;
@@ -47,21 +57,20 @@ interface HealthCheckEntry extends BaseEntry {
 interface OccupationalHealthcareEntry extends BaseEntry {
   type: "OccupationalHealthcare";
   employerName: string;
-  sickLeave?: {
-    startDate: string;
-    endDate: string;
-  };
+  sickLeave?: SickLeave;
 }
 
 interface HospitalEntry extends BaseEntry {
   type: "Hospital";
-  discharge: {
-    date: string;
-    criteria: string;
-  };
+  discharge: Discharge;
 }
 
 export type Entry =
   | HealthCheckEntry
   | OccupationalHealthcareEntry
   | HospitalEntry;
+
+export type NewEntry =
+  | Omit<HospitalEntry, "id">
+  | Omit<OccupationalHealthcareEntry, "id">
+  | Omit<HealthCheckEntry, "id">;
